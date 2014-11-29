@@ -20,10 +20,11 @@ import java.util.Scanner;
 public class JuegoGato {
 	
 
-static  char gato[][] = {{'-','-','-'}
+static char gato[][] = {{'-','-','-'}
 						, {'-','-','-'}
 						, {'-','-','-'}
 						};
+
 static int turno = 0, ronda = 0;
 
 
@@ -35,12 +36,13 @@ static int turno = 0, ronda = 0;
 		char _posicion;
 		boolean nueva_partida = false;
 		Scanner leer = new Scanner(System.in);
-		
+
 		do{
 		inicio();
 			while (true)
 			{
 				ganador = ganador();
+				
 				if(ganador==1 || ganador == 2)
 				{
 					limpiarPantalla();
@@ -113,30 +115,30 @@ static int turno = 0, ronda = 0;
 		}while(nueva_partida);
 	}//Fin de main
 
-	static public void inicio()
+	public static void inicio()
 	{
-				Scanner leer = new Scanner(System.in);
-				System.out.println("======El Juego del Gato #======");
-				gatoTeclas();
-				System.out.println("Elige quien inicia: Jugador 1 = X	Jugador 2 = O");
-				while (true)
-				{
-					String num = leer.next();
-					if(num.equals("1") || num.equals("2")){
-						turno = Integer.parseInt(num);
-						break;	
-					}
-					else
-						System.out.println("Opcion no valida");
-				}
-				limpiarPantalla();
-				gatoGraf();
-				turnoJugador();
+		Scanner leer = new Scanner(System.in);
+		System.out.println("======El Juego del Gato #======");
+		gatoTeclas();
+		System.out.println("Elige quien inicia: Jugador 1 = X	Jugador 2 = O");
+		while (true)
+		{
+			String num = leer.next();
+			if(num.equals("1") || num.equals("2")){
+				turno = Integer.parseInt(num);
+				break;	
+			}
+			else
+				System.out.println("Opcion no valida");
+		}
+		limpiarPantalla();
+		gatoGraf();
+		turnoJugador();
 	}
 	
 	
-	static public void gatoGraf()
-	 {
+	public static void gatoGraf()
+	{
 
 		 System.out.println(" -----------------");
 		 System.out.println("|  "+gato[0][0] + "  |  "+gato[0][1] + "  |  " +gato[0][2] + "  |");
@@ -146,8 +148,8 @@ static int turno = 0, ronda = 0;
 		 
 	 }
 	
-	static public void gatoTeclas()
-	 {
+	public static void gatoTeclas()
+	{
 
 		 System.out.println(" -----------------");
 		 System.out.println("|  Q "+ " | " + " W  | " + " E  |");
@@ -157,7 +159,7 @@ static int turno = 0, ronda = 0;
 		 
 	 }
 	
-	static public void turnoJugador()
+	public static void turnoJugador()
 	{
 		if(turno==1)
 			 System.out.println("Jugador 1 --- X");
@@ -166,7 +168,7 @@ static int turno = 0, ronda = 0;
 	} 
 	
 
-	static public int ganador()
+	public static int ganador()
 	 {
 		 //Comprobación por filas
 		 for(int i = 0; i < 3; i++)
@@ -206,7 +208,7 @@ static int turno = 0, ronda = 0;
 
 	//El metodo jugador almacena el valor correspondiente en la posicion seleccionada, alterna los turnos
 	// aumenta la ronda y valida si una casilla ha sido seleccionada
-	static public void jugador(int i, int j, int turn)
+	public static void jugador(int i, int j, int turn)
 	{
 		if(gato[i][j] == 'X' || gato[i][j] == 'O')
 		{
@@ -234,7 +236,8 @@ static int turno = 0, ronda = 0;
 			
 	}//Fin de metodo jugador
 
-	static public void inicializarGato()
+	//Incializa los valore de gato a "-", para la proxima partida
+	public static void inicializarGato()
 	{
 		turno = 0;
 		ronda = 0;
@@ -245,7 +248,7 @@ static int turno = 0, ronda = 0;
 
 	
 	//Metodo para limpiar pantalla
-	static public void limpiarPantalla()
+	public static void limpiarPantalla()
 	{
 	   for (int i =0; i<10; i++)
 		 System.out.println();
