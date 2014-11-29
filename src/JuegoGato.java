@@ -1,7 +1,7 @@
 /*
 Copyright (C) <29/11/2014r>  <Nicolas Lemus Plascencia "Niox">
 
-  	This program is free software: you can redistribute it and/or modify
+    This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
@@ -236,7 +236,7 @@ static int turno = 0, ronda = 0;
 			
 	}//Fin de metodo jugador
 
-	//Incializa los valore de gato a "-", para la proxima partida
+	//Incializa los valores de gato a "-", para la proxima partida
 	public static void inicializarGato()
 	{
 		turno = 0;
