@@ -36,7 +36,7 @@ static int turno = 0, ronda = 0;
 		char _posicion;
 		boolean nueva_partida = false;
 		Scanner leer = new Scanner(System.in);
-
+		System.out.println("Bienvenido al juego del gato");
 		do{
 		inicio();
 			while (true)
@@ -236,7 +236,7 @@ static int turno = 0, ronda = 0;
 			
 	}//Fin de metodo jugador
 
-	//Incializa los valore de gato a "-", para la proxima partida
+	//Incializa los valores de gato a "-", para la proxima partida
 	public static void inicializarGato()
 	{
 		turno = 0;
